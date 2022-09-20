@@ -4,16 +4,9 @@ const methodOverride = require('method-override')
 const app = express()
 const port = 3000
 
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/short-url')
-
-const db = mongoose.connection
-db.on('error', () => {
-  console.log('mongodb error!')
-})
-db.once('open', () => {
-  console.log('mongodb connected!')
-})
+const URL = require('./models/URL')
+const shortenURL = require('./utils/shortenURL')
+require('./config/mongoose')
 
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
