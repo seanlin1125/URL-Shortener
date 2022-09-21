@@ -20,18 +20,17 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   const { originURL } = req.body
   const shortURL = shortenURL(5)
+  const baseURL = req.headers.origin
+  console.log(baseURL)
   // 找尋第一個符合的原始連結，
   URL.findOne({ originURL })
     // 如果找不到就Create一筆資料至資料庫(含此連結及新產生的隨機五位英數亂碼)
-    .then((data) => data ? data : URL.create({ shortURL, originURL }))
+    .then((data) => data ? data : URL.create({ originURL, shortURL }))
     .then((data) => {
-      res.render("index", {
-        originURL,
-        shortURL: data.shortURL,
-      })
+      res.render("index", { baseURL, shortURL: data.shortURL })
     }
     )
-    .catch(error => console.error(error))
+    .catch((error) => console.error(error))
 })
 
 app.listen(port, () => {
