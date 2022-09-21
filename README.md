@@ -1,34 +1,26 @@
-# 餐廳清單
-一個收藏個人喜好餐廳的網站
+# 短網址產生器
+一個把網址縮短的網站
 ## 功能
-+ 使用者可以新增一家餐廳
-+ 使用者可以瀏覽一家餐廳的詳細資訊
-+ 使用者可以修改一家餐廳的資訊
-+ 使用者可以刪除一家餐廳
-+ 使用者可以在首頁看到所有餐廳與它們的簡單資料：
-  - 餐廳照片
-  - 餐廳名稱
-  - 餐廳分類
-  - 餐廳評分
-+ 使用者可以再點進去看餐廳的詳細資訊：
-  - 類別
-  - 地址
-  - 電話
-  - 描述
-  - 圖片
-+ 使用者可以透過搜尋餐廳名稱來找到特定的餐廳
-+ 使用者可以透過搜尋餐廳類別來找到特定的餐廳
++ 使用者可以在首頁表單輸入原始網址，如 https://www.google.com
+；送出表單之後，畫面會回傳格式化後的短網址，如 http://localhost:3000/LkbZx
++ 使用者可以在瀏覽器的網址列輸入短網址（如 http://localhost:3000/LkbZx
+），瀏覽器就會導向原本的網站（如 https://www.google.com
+）
++ 短網址輸出格式為 5 碼英數組合，如 http://.../**LkbZx**
 ## 畫面
-![](https://github.com/seanlin1125/AC_2-3_A8_Restaurant-List/blob/main/image/A8%E9%A6%96%E9%A0%81.png)
-![](https://github.com/seanlin1125/AC_2-3_A1_Restaurant-List/blob/main/image/restaurant-list_restaurantInfo.png)
-## 安裝
+![](https://github.com/seanlin1125/URL-Shortener/blob/main/images/short-url-home.png)
+---
+![](https://github.com/seanlin1125/URL-Shortener/blob/main/images/short-url-copyLink.png)
+---
+![](https://github.com/seanlin1125/URL-Shortener/blob/main/images/short-url-errorMessage.png)
+## 安裝使用
 1. 複製專案，在終端機輸入：
 ```
-git clone https://github.com/seanlin1125/AC_2-3_A7_Restaurant-List.git
+git clone https://github.com/seanlin1125/URL-Shortener.git
 ```
 2. 進入專案資料夾，在終端機輸入：
 ```
-cd AC_2-3_A7_Restaurant-List
+cd URL-Shortener
 ```
 3. 安裝`npm`套件。在終端機輸入：
 ```
