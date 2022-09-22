@@ -19,7 +19,10 @@ router.post('/', (req, res) => {
       res.render("index", { baseURL, shortURL: data.shortURL })
     }
     )
-    .catch((error) => console.error(error))
+    .catch((error) => {
+      console.error(error)
+      res.render('error', { error: 'Something went wrong. Please contact your service provider.' })
+    })
 })
 
 router.get('/:shortURL', (req, res) => {
@@ -28,7 +31,10 @@ router.get('/:shortURL', (req, res) => {
   const errorMessage = `Error! "${baseURL}/${shortURL}" is not found. Please contact your service provider.`
   URL.findOne({ shortURL })
     .then((data) => data ? res.redirect(data.originURL) : res.render('error', { errorMessage }))
-    .catch((error) => console.error(error))
+    .catch((error) => {
+      console.error(error)
+      res.render('error', { error: 'Something went wrong. Please contact your service provider.' })
+    })
 })
 
 module.exports = router

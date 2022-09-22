@@ -1,6 +1,12 @@
+{{#if errorMessage}}
 <div class="alert alert-info d-flex justify-content-center" role="alert">
   {{errorMessage}}
 </div>
+{{else}}
+<div class="alert alert-danger d-flex justify-content-center" role="alert">
+  {{error}}
+</div>
+{{/if}}
 <div class="d-flex justify-content-center">
   <a href="/" class="btn btn-outline-dark">URL Shortener</a>
 </div>
